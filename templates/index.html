@@ -1,0 +1,43 @@
+<style>
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    #box-div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .box{
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+        border-radius: 15px;
+        border: 2px solid black
+    }
+</style>
+<div class="header">
+    <h3>Welcome</h3>
+</div>
+<div id="box-div">
+    {% if numb: %}
+        {% for x in range(numb): %}
+            {% if clr: %}
+                <div class="box" style="background-color: {{ clr }}"></div>
+            {% else %}
+            <div class="box"></div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% if clr: %}
+            <div class="box" style="background-color: {{ clr }}"></div>
+            <div class="box" style="background-color: {{ clr }}"></div>
+            <div class="box" style="background-color: {{ clr }}"></div>
+        {% else %}
+            <div class="box"></div>
+        {% endif %}
+    {% endif %}
+</div>
+
+
